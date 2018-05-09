@@ -27,9 +27,8 @@ class Board extends React.Component<object, IBoardStates> {
     }
     public renderSquare(i: number) {
         return (<Square
-            sequence={i}
             value={this.state.squares[i]}
-            onClick={this.handleClick} />)
+            onClick={() => { this.handleClick(i) }} />)
     }
     public calculateWinner(squares: string[]) {
         const lines = [

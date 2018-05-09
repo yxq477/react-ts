@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import * as ReactDOM from 'react-dom';
 import Board from './Board';
 class Game extends React.Component {
     public render() {
