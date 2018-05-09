@@ -1,3 +1,13 @@
+### master      分支是不允许在jsx中使用lambda
+### withLambda  分支是允许在jsx中使用lambda
+> 在jsx中使用lambda有个问题就是每次该组件渲染的时候都会创建一个不同的回调函数。在大多数情况下，这没有问题。然而如果这个回调函数作为一个属性值传入低阶组件，这些组件可能会进行额外的重新渲染。我们通常建议在构造函数中绑定或使用属性初始化器语法来避免这类性能问题。
+
+参考:[The problem with this syntax is that a different callback is created each time the LoggingButton renders. In most cases, this is fine. However, if this callback is passed as a prop to lower components, those components might do an extra re-rendering. We generally recommend binding in the constructor or using the class fields syntax, to avoid this sort of performance problem.](https://reactjs.org/docs/handling-events.html)
+
+- 一开始我想不清楚使用lambda和不用的根本区别是什么,后面暂存了当前代码,新建分支将允许使用lambda的实现编写完了才明白 __是一个 `props`__ , 教程使用lambda的话,原有的响应点击事件函数的参数,也就是方格的顺序,不会需要单独的一个`props`来保存.
+
+--------
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
